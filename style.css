@@ -1,0 +1,502 @@
+:root{
+    --font-titles:'Fraunces', serif;
+    --font-text:'Barlow', sans-serif;
+    --font-title-login: ;
+    --main-color:rgb(218, 245, 228);
+}
+*{
+    padding: 0;
+    margin: 0;
+}
+/* Header */
+.header{
+    
+    
+    padding: 40px; 
+    
+    background-color: var(--main-color);
+    display: flex;
+    justify-content: space-between;
+    
+    align-items: center;
+}
+.header-title{
+    font-family: var(--font-titles);
+    font-size: 36px;
+}
+.nav{
+    min-width: 40%;
+    
+}
+.nav-list{
+    display: flex;
+    width: 100%;
+    
+    align-items: center;
+    font-family: var(--font-text);
+    font-weight: 600;
+    justify-content: space-around;
+}
+
+.nav-list li{
+    
+   display: inline-block;
+    margin-left: 20px;
+}
+.menu-sandwich{
+    display: none;
+    width: 20px;
+}
+
+#checkbox-invi{
+    display: none;
+}
+
+/* Main  */
+.main-index{
+    display: flex;
+    flex-direction: column;
+
+}
+.main-presentation{
+    height: 87vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.main-presentation img{
+    width: 100%;
+    height: 100%;
+    
+}
+.main-presentation .wrapper-presentation{
+    position: absolute;
+    text-align: center;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 50%;
+    margin: 0 auto;
+    font-family: var(--font-titles);
+    color: white;
+}
+
+.presentation-title{
+    font-size: 4rem;
+}
+
+
+.container-search{
+    width: 80%;
+    position: relative;
+}
+.input-search{
+    width: 100%;
+    padding:30px 0 30px 30px;
+    
+    border-radius: 40px ;
+    border: 0;
+    font-size: 18px;
+    outline: none;
+}
+.input-search:hover{
+    background-color: rgb(248, 248, 248);
+}
+
+.container-search button{
+    position: absolute;
+    top: 12px;
+    height: 70%;
+    width: 50px;
+    
+    right: -25px;
+    padding: 15px;
+    border-radius: 50%;
+    border: 0;
+    background-color: var(--main-color);
+    transition: .4s;
+}
+.container-search button:hover{
+    width: 60px;
+    font-size: 20px;
+    height: 73%;
+    transition: .4s;
+}
+.text{
+    font-family: var(--font-text);
+}
+.title-main{
+    font-family: var(--font-titles);
+
+}
+
+/* Media query responsive */
+@media (max-width: 900px){
+
+    .active{
+        display: block;
+        float: right;
+    }
+    .nav{
+        position: relative;
+        height: 100%;
+        
+    }
+    .nav-list{
+        position: absolute;
+        
+        display: none;
+        flex-direction: column;
+        height: 200px;
+        z-index: 1;
+        top: 72px;
+        align-items: center;
+        right: -40px;
+        background-color: rgb(170, 170, 170);
+        justify-content: space-around;
+        transition: .4s all ease;
+    }
+    .nav-list li{
+        margin: 0;
+    }
+    #checkbox-invi:checked ~ .nav-list{
+        display: flex; 
+        
+        justify-content: center;
+        
+    }
+    .container-search input{
+        font-size: 1rem;
+    }
+    
+
+}
+
+/*  Section recetas */
+
+.recetas{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    
+    min-height: 600px;
+    justify-content: space-around;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+.recetas h2{
+    margin-bottom: 30px;
+}
+
+.cards-container{
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    column-gap: 20px;
+    row-gap: 10px;
+    
+}
+
+
+.img-receta{
+    width: 100%;
+    min-width: 120px;
+    height: 50%;
+}
+
+.receta-card{
+    
+    border: 1px solid rgb(245, 222, 188);
+    border-radius: 10px;
+    padding: 30px;
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    
+}
+.footer{
+    background-color: var(--main-color);
+    height: 20vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.footer-content{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 60%;
+}
+.footer-links{
+    text-align: center;
+    width: 30%;
+    row-gap: 10px;
+    column-gap: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.footer-links a{
+    text-decoration: none;
+    color: rgb(32, 32, 32);
+}
+
+.footer-social img{
+    margin-left: 20px;
+    
+}
+
+@media (max-width: 450px){
+    .footer{
+        padding: 10px;
+    }
+    .footer-content{
+        width: 100%;
+        
+    }
+
+    .main-presentation .wrapper-presentation{
+        width: 80%;
+        
+    }
+    .container-search input{
+        font-size: .9rem;
+    }
+    .receta-card{
+        width: 100%;
+        transition: .7s;
+    }
+    
+}
+
+
+/* Estilo del Login ----------------------------------------- */
+
+.body-form{
+    background: linear-gradient(to right, var(--main-color), rgb(161, 192, 228));
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.container-login{
+    margin: 0 auto;
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    width: 30%;
+    height: 55%;
+    
+    
+    padding: 40px 20px;
+    border-radius: 10px ;
+}
+.container-title{
+    height: 30%;
+    
+}
+.title-login{
+    font-size: 56px;
+    font-weight: 800;
+    font-family: var(--font-titles);
+    
+    
+}
+.a-none{
+    text-decoration: none;
+    color: black;
+}
+.login-form{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#input-form{
+    width: 50%;
+    padding: 20px;
+    border-radius: 20px;
+    border: 3px solid black;
+    color: black;
+    background-color: transparent;
+    outline: none;
+    transition: .3s;
+}
+#input-form::placeholder{
+    color: black;
+}
+#input-form:focus{
+    transition: .3s;
+    color: rgb(163, 160, 160);
+    border: 3px solid rgb(141, 141, 141);
+}
+.login-form_button{
+    width: 60%;
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #fff;
+    border: none;
+    border-radius: 20px;
+    font-size: 20px;
+    cursor: pointer;
+    color: black;
+    box-shadow: 1px 1px 4px 1px rgb(194, 194, 194);
+    
+}
+.login-form_button:hover{
+    background-color: rgb(230, 243, 235);
+}
+.login-form_remember{
+    font-family: var(--font-text);
+    font-size: 16px;
+}
+
+
+/* Estilo del register ---------------------------------*/
+
+
+.container-register{
+    width: 80%;
+    height: 50%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.register-form{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 100%;
+    
+    align-items: center;
+    justify-content: space-between;
+}
+.container-title-register{
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+.container-register hr{
+    height: 100%;
+    width: 1px;
+    background-color:rgb(3, 3, 3);
+
+}
+
+
+/* Estilo about */
+
+.about-title{
+    font-size: 56px;
+    position: absolute;
+    color: white;
+}
+.main-about{
+    
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.text-about{
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+}
+.text-about p{
+    line-height: 40px;
+}
+
+.container-colaboradores{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.colaboradores{
+    width: 40%;
+    text-align: center;
+}
+.colaboradores img{
+    width: 40%;
+}
+.colaborador-title{
+    font-family: var(--font-titles);
+}
+
+/* Estilo contactos */
+
+.body-contact{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--main-color);
+    position: relative;
+}
+
+.container-contact{
+    width: 35%;
+    height: 80%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    
+}
+.contact-form_button{
+    width: 40%;
+    
+}
+.contact-text{
+    text-align: center;
+}
+.contact{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    
+    height: 20%;
+    
+}
+.input-contact{
+    padding: 20px;
+    
+    border-radius: 20px;
+}
+.input-contact{
+    width: 100% !important; 
+    
+}
+.back{
+    position: absolute;
+    font-size: 50px;
+    top: 30px;
+    left: 50px;
+    color: black;
+    text-decoration: none;
+}
+.back:hover{
+    transition: .3s;
+    opacity: .5;
+}
